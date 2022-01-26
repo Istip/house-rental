@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useAuthContext } from './hooks/useAuthContext';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 
 function App() {
+  const { authIsReady, user } = useAuthContext();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hello</h1>
+      <input type="text" />
+      {authIsReady && (
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                !user ? (
+                  <div>Helloka bejelentkezett!</div>
+                ) : (
+                  <Navigate replace to="/dashboard" />
+                )
+              }
+            />
+          </Routes>
+        </Router>
+      )}
+    </>
   );
 }
 
