@@ -4,8 +4,8 @@ import { useAuthContext } from './useAuthContext';
 
 export const useLogin = () => {
   const [isCancelled, setIsCancelled] = useState(false);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loginError, setError] = useState(null);
+  const [loginLoading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
 
   const login = async (email, password) => {
@@ -41,5 +41,5 @@ export const useLogin = () => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { login, loading, error };
+  return { login, loginLoading, loginError };
 };

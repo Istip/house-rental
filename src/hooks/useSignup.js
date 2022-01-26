@@ -4,8 +4,8 @@ import { useAuthContext } from './useAuthContext';
 
 export const useSignup = () => {
   const [cancelled, setCancelled] = useState(false);
-  const [laoding, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [signUpLoading, setLoading] = useState(false);
+  const [signUpError, setError] = useState(null);
 
   const { dispatch } = useAuthContext();
 
@@ -29,19 +29,11 @@ export const useSignup = () => {
       await res.user.updateProfile({ displayName: name });
 
       // create document with the user
-      await projectFirestore
-        .collection('users')
-        .doc(res.user.uid)
-        .set({
-          uid: res.user.uid,
-          online: true,
-          active: true,
-          admin: false,
-          displayName: name,
-          email: email,
-          membership: 'basic',
-          actions: ['haircut', 'hairdye', 'other'],
-        });
+      await projectFirestore.collection('users').doc(res.user.uid).set({
+        uid: res.user.uid,
+        displayName: name,
+        email: email,
+      });
 
       // dispatching login action
       dispatch({ type: 'LOGIN', payload: res.user });
@@ -66,5 +58,5 @@ export const useSignup = () => {
     };
   }, []);
 
-  return { laoding, error, signUp };
+  return { signUpLoading, signUpError, signUp };
 };

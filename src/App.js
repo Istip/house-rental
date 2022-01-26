@@ -1,19 +1,22 @@
 import React from 'react';
 import { useAuthContext } from './hooks/useAuthContext';
+import { useLogout } from './hooks/useLogout';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from 'react-router-dom';
+import { Authentication } from './components/auth/';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
 
+  const { logout } = useLogout();
+
   return (
     <>
       <h1>Hello</h1>
-      <input type="text" />
       {authIsReady && (
         <Router>
           <Routes>
@@ -21,9 +24,13 @@ function App() {
               path="/"
               element={
                 !user ? (
-                  <div>Helloka bejelentkezett!</div>
+                  <Authentication />
                 ) : (
-                  <Navigate replace to="/dashboard" />
+                  <div>
+                    Helloka bejelentkezett!
+                    <button onClick={logout}>LOGOUT</button>
+                  </div>
+                  // <Navigate replace to="/dashboard" />
                 )
               }
             />
