@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
 import { useLogin } from '../../hooks/useLogin';
+import { tokens, Center, Text, Input, Button, Error } from '../UI';
+import {
+  AuthForm,
+  AuthSwitcher,
+  Background,
+  Title,
+} from './Authentication.styles';
 
 const Authentication = () => {
   const state = { email: '', password: '', name: '' };
 
-  const [isRegistered, setIsRegistered] = useState(false);
+  const [isRegistration, setisRegistration] = useState(false);
   const [credentials, setCredentials] = useState(state);
 
   const { signUp, signUpLoading, signUpError } = useSignup();
@@ -19,7 +26,7 @@ const Authentication = () => {
 
   // Function to change login / register state
   const handleAuthState = () => {
-    setIsRegistered(!isRegistered);
+    setisRegistration(!isRegistration);
   };
 
   // Function handling the user sign up
@@ -27,7 +34,7 @@ const Authentication = () => {
     e.preventDefault();
     setCredentials(state);
 
-    if (isRegistered) {
+    if (isRegistration) {
       signUp(credentials.email, credentials.password, credentials.name);
     } else {
       login(credentials.email, credentials.password);
@@ -35,55 +42,79 @@ const Authentication = () => {
   };
 
   return (
-    <div>
-      <h3>Authentication</h3>
-      <button
-        onClick={handleAuthState}
-        className="primary focus:outline-none focus-visible:ring"
-      >
-        {isRegistered ? 'LOGIN' : 'REGISTER'}
-      </button>
+    <Background>
+      <Title>
+        <Text tag="h1" color={tokens.colors.primary}>
+          Hargitai hazak
+        </Text>
+      </Title>
 
-      <form onSubmit={handleAuth}>
-        {isRegistered && (
-          <>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={credentials.name}
-              onChange={handleInput}
-            />
-          </>
-        )}
+      <Center gap="10" direction="column">
+        <AuthSwitcher onClick={handleAuthState}>
+          <Text variant="regular14" color={tokens.colors.primaryDark2}>
+            Switch to{' '}
+            <Text
+              tag="span"
+              variant="black14"
+              color={tokens.colors.primaryDark1}
+            >
+              {isRegistration ? 'Login' : 'Sign Up'}
+            </Text>
+          </Text>
+        </AuthSwitcher>
 
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={credentials.email}
-          onChange={handleInput}
-        />
+        <AuthForm onSubmit={handleAuth}>
+          {isRegistration && (
+            <>
+              <Input
+                type="text"
+                id="name"
+                name="name"
+                value={credentials.name}
+                label="Name"
+                placeholder="Enter your name..."
+                bottom="8px"
+                onChange={handleInput}
+                required
+              />
+            </>
+          )}
 
-        <label htmlFor="name">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={credentials.password}
-          onChange={handleInput}
-        />
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            value={credentials.email}
+            label="Email"
+            placeholder="Enter your email..."
+            bottom="8px"
+            onChange={handleInput}
+            required
+          />
 
-        <button type="submit" disabled={loginLoading || signUpLoading}>
-          SUBMIT
-        </button>
-      </form>
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            value={credentials.password}
+            label="Password"
+            placeholder="Enter your password..."
+            bottom="20px"
+            onChange={handleInput}
+            required
+          />
 
-      {signUpError && <div>{signUpError}</div>}
-      {loginError && <div>{loginError}</div>}
-    </div>
+          <Button block type="submit" disabled={loginLoading || signUpLoading}>
+            SUBMIT
+          </Button>
+        </AuthForm>
+      </Center>
+
+      <Center>
+        {signUpError && <Error>{signUpError}</Error>}
+        {loginError && <Error>{loginError}</Error>}
+      </Center>
+    </Background>
   );
 };
 

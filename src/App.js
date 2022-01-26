@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  // Navigate,
 } from 'react-router-dom';
 import { Authentication } from './components/auth/';
 
@@ -16,7 +16,6 @@ function App() {
 
   return (
     <>
-      <h1>Hello</h1>
       {authIsReady && (
         <Router>
           <Routes>
