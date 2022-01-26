@@ -29,8 +29,5 @@ export const Title = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export const AuthSwitcher = styled.div`
-  cursor: pointer;
+  text-align: center;
 `;

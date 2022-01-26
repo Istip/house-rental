@@ -27,6 +27,17 @@ const InputField = styled.input`
   padding: 8px 12px;
   margin-top: 2px;
   margin-bottom: ${(props) => props.bottom || 0};
+  border: ${(props) =>
+    props.border
+      ? `1px solid ${tokens.colors.primaryLight2}`
+      : `1px solid ${tokens.colors.white}`};
+  transition: 250ms ease;
+  box-shadow: ${(props) =>
+    props.shadow ? `0 0 10px 2px ${tokens.colors.primaryDark2}0D` : 'none'};
+
+  &:focus {
+    border-bottom: 1px solid ${tokens.colors.primary};
+  }
 
   &::placeholder {
     color: ${tokens.colors.mediumGrey};

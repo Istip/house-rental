@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
 import { useLogin } from '../../hooks/useLogin';
 import { tokens, Center, Text, Input, Button, Error } from '../UI';
-import {
-  AuthForm,
-  AuthSwitcher,
-  Background,
-  Title,
-} from './Authentication.styles';
+import { AuthForm, Background, Title } from './Authentication.styles';
 
 const Authentication = () => {
   const state = { email: '', password: '', name: '' };
@@ -50,18 +45,16 @@ const Authentication = () => {
       </Title>
 
       <Center gap="10" direction="column">
-        <AuthSwitcher onClick={handleAuthState}>
-          <Text variant="regular14" color={tokens.colors.primaryDark2}>
-            Switch to{' '}
-            <Text
-              tag="span"
-              variant="black14"
-              color={tokens.colors.primaryDark1}
-            >
+        <Button variant="secondary" size="medium" onClick={handleAuthState}>
+          <Center gap="4">
+            <Text tag="span" variant="regular12">
+              Switch to
+            </Text>
+            <Text tag="span" variant="black12">
               {isRegistration ? 'Login' : 'Sign Up'}
             </Text>
-          </Text>
-        </AuthSwitcher>
+          </Center>
+        </Button>
 
         <AuthForm onSubmit={handleAuth}>
           {isRegistration && (
@@ -75,6 +68,7 @@ const Authentication = () => {
                 placeholder="Enter your name..."
                 bottom="8px"
                 onChange={handleInput}
+                shadow
                 required
               />
             </>
@@ -89,6 +83,7 @@ const Authentication = () => {
             placeholder="Enter your email..."
             bottom="8px"
             onChange={handleInput}
+            shadow
             required
           />
 
@@ -101,6 +96,7 @@ const Authentication = () => {
             placeholder="Enter your password..."
             bottom="20px"
             onChange={handleInput}
+            shadow
             required
           />
 
