@@ -13,7 +13,7 @@ export const useLogin = () => {
     setLoading(true);
 
     try {
-      // login
+      // login with email and password
       const res = await projectAuth.signInWithEmailAndPassword(email, password);
 
       // dispatch login action
@@ -35,5 +35,9 @@ export const useLogin = () => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { login, loginLoading, loginError };
+  return {
+    login,
+    loginLoading,
+    loginError,
+  };
 };

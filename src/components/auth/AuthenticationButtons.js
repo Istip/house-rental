@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Button, Center, Icon } from '../UI';
 
-const AuthenticationButtons = () => {
+const AuthenticationButtons = ({ signUpWithGoogle, signUpWithFacebook }) => {
   return (
     <Wrapper>
       <Center gap="10" direction="column">
@@ -10,11 +11,17 @@ const AuthenticationButtons = () => {
           variant="facebook"
           block
           icon={<Icon icon="facebook" size={18} />}
+          onClick={signUpWithFacebook}
         >
-          Sign Up with Facebook
+          Continue with Facebook
         </Button>
-        <Button variant="google" block icon={<Icon icon="google" size={18} />}>
-          Sign Up with Google
+        <Button
+          variant="google"
+          block
+          icon={<Icon icon="google" size={18} />}
+          onClick={signUpWithGoogle}
+        >
+          Continue with Google
         </Button>
       </Center>
     </Wrapper>
@@ -27,3 +34,8 @@ const Wrapper = styled.div`
 `;
 
 export default AuthenticationButtons;
+
+AuthenticationButtons.propTypes = {
+  signUpWithFacebook: PropTypes.func,
+  signUpWithGoogle: PropTypes.func,
+};

@@ -26,7 +26,12 @@ function App() {
                   <Authentication />
                 ) : (
                   <div>
-                    Helloka bejelentkezett!
+                    <button onClick={() => console.log(user)}>
+                      <h3>Helloka bejelentkezett!</h3>
+                    </button>
+                    <div>
+                      <img src={user.photoURL} alt="monika" />
+                    </div>
                     <button onClick={logout}>LOGOUT</button>
                   </div>
                   // <Navigate replace to="/dashboard" />

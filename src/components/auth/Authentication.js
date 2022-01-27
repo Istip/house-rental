@@ -11,7 +11,13 @@ const Authentication = () => {
   const [isRegistration, setisRegistration] = useState(false);
   const [credentials, setCredentials] = useState(state);
 
-  const { signUp, signUpLoading, signUpError } = useSignup();
+  const {
+    signUp,
+    signUpWithGoogle,
+    signUpWithFacebook,
+    signUpLoading,
+    signUpError,
+  } = useSignup();
   const { login, loginLoading, loginError } = useLogin();
 
   // Function handling input fields
@@ -104,11 +110,13 @@ const Authentication = () => {
           </Button>
         </AuthForm>
 
-        <Divider color={tokens.colors.lightGrey} padding="20px 60px">
-          OR
-        </Divider>
+        <Divider padding="20px 60px">OR</Divider>
 
-        <AuthenticationButtons />
+        <AuthenticationButtons
+          signUpWithGoogle={signUpWithGoogle}
+          signUpWithFacebook={signUpWithFacebook}
+          isRegistration={isRegistration}
+        />
       </Center>
 
       <Center>

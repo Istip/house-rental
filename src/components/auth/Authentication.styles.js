@@ -10,7 +10,7 @@ export const Background = styled.div`
   background-image: linear-gradient(
       to bottom,
       transparent,
-      ${tokens.colors.primaryDark2}
+      ${tokens.colors.white}
     ),
     url(${bg});
   background-size: cover;
