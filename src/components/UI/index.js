@@ -4,5 +4,7 @@ import Text from './Text';
 import Button from './Button';
 import Input from './Input';
 import Error from './Error';
+import Divider from './Divider';
+import Icon from './Icon';
 
-export { tokens, Center, Text, Button, Input, Error };
+export { tokens, Center, Text, Button, Input, Error, Divider, Icon };

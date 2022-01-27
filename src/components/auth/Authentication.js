@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
 import { useLogin } from '../../hooks/useLogin';
-import { tokens, Center, Text, Input, Button, Error } from '../UI';
+import { tokens, Center, Text, Input, Button, Error, Divider } from '../UI';
 import { AuthForm, Background, Title } from './Authentication.styles';
+import AuthenticationButtons from './AuthenticationButtons';
 
 const Authentication = () => {
   const state = { email: '', password: '', name: '' };
@@ -44,18 +45,16 @@ const Authentication = () => {
         </Text>
       </Title>
 
-      <Center gap="10" direction="column">
-        <Button variant="secondary" size="medium" onClick={handleAuthState}>
-          <Center gap="4">
-            <Text tag="span" variant="regular12">
-              Switch to
-            </Text>
-            <Text tag="span" variant="black12">
-              {isRegistration ? 'Login' : 'Sign Up'}
-            </Text>
-          </Center>
-        </Button>
+      <Center gap="4" onClick={handleAuthState}>
+        <Text tag="span" variant="regular12" color={tokens.colors.primaryDark2}>
+          Switch to
+        </Text>
+        <Text tag="span" variant="black12" color={tokens.colors.primaryDark1}>
+          {isRegistration ? 'Login' : 'Sign Up'}
+        </Text>
+      </Center>
 
+      <Center gap="10" direction="column">
         <AuthForm onSubmit={handleAuth}>
           {isRegistration && (
             <>
@@ -104,6 +103,12 @@ const Authentication = () => {
             SUBMIT
           </Button>
         </AuthForm>
+
+        <Divider color={tokens.colors.lightGrey} padding="20px 60px">
+          OR
+        </Divider>
+
+        <AuthenticationButtons />
       </Center>
 
       <Center>

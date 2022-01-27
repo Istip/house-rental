@@ -5,7 +5,7 @@ import { Center, tokens } from './';
 const Button = (props) => {
   return (
     <ButtonItem {...props} className={props.variant || 'primary'}>
-      <ButtonText withIcon={props.icon}>
+      <ButtonText withIcon={props.icon} social={props.variant}>
         {props.icon && <Center>{props.icon}</Center>}
         {props.children}
       </ButtonText>
@@ -116,6 +116,20 @@ const ButtonItem = styled.button`
     &:active {
       background: ${tokens.colors.warning + '66'};
     }
+  }
+
+  &.facebook {
+    color: ${tokens.colors.white};
+    font-weight: 700;
+    background: #4267b2;
+    border: none;
+  }
+
+  &.google {
+    color: ${tokens.colors.primaryDark2};
+    font-weight: 700;
+    background: ${tokens.colors.white};
+    border: 1px solid ${tokens.colors.darkGrey};
   }
 `;
 
