@@ -21,7 +21,7 @@ export const Background = styled.div`
 
 export const AuthForm = styled.form`
   width: 80vw;
-  max-width: 600px;
+  max-width: 500px;
 `;
 
 export const Title = styled.div`

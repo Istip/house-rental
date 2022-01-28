@@ -30,7 +30,7 @@ const AuthenticationButtons = ({ signUpWithGoogle, signUpWithFacebook }) => {
 
 const Wrapper = styled.div`
   width: 80vw;
-  max-width: 600px;
+  max-width: 500px;
 `;
 
 export default AuthenticationButtons;

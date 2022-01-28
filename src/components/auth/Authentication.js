@@ -4,6 +4,7 @@ import { useLogin } from '../../hooks/useLogin';
 import { tokens, Center, Text, Input, Button, Error, Divider } from '../UI';
 import { AuthForm, Background, Title } from './Authentication.styles';
 import AuthenticationButtons from './AuthenticationButtons';
+import AuthenticationSwitcher from './AuthenticationSwitcher';
 
 const Authentication = () => {
   const state = { email: '', password: '', name: '' };
@@ -26,11 +27,6 @@ const Authentication = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  // Function to change login / register state
-  const handleAuthState = () => {
-    setisRegistration(!isRegistration);
-  };
-
   // Function handling the user sign up
   const handleAuth = (e) => {
     e.preventDefault();
@@ -51,14 +47,10 @@ const Authentication = () => {
         </Text>
       </Title>
 
-      <Center gap="4" onClick={handleAuthState}>
-        <Text tag="span" variant="regular12" color={tokens.colors.primaryDark2}>
-          Switch to
-        </Text>
-        <Text tag="span" variant="black12" color={tokens.colors.primaryDark1}>
-          {isRegistration ? 'Login' : 'Sign Up'}
-        </Text>
-      </Center>
+      <AuthenticationSwitcher
+        setisRegistration={setisRegistration}
+        isRegistration={isRegistration}
+      />
 
       <Center gap="10" direction="column">
         <AuthForm onSubmit={handleAuth}>
