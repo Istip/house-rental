@@ -1,18 +1,18 @@
 import React from 'react';
 import { useAuthContext } from './hooks/useAuthContext';
-import { useLogout } from './hooks/useLogout';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  // Navigate,
+  Navigate,
 } from 'react-router-dom';
 import { Authentication } from './components/auth/';
 
+// pages
+import Home from './pages/home/Home';
+
 function App() {
   const { authIsReady, user } = useAuthContext();
-
-  const { logout } = useLogout();
 
   return (
     <>
@@ -22,22 +22,16 @@ function App() {
             <Route
               path="/"
               element={
-                !user ? (
-                  <Authentication />
-                ) : (
-                  <div>
-                    <button onClick={() => console.log(user)}>
-                      <h3>Helloka bejelentkezett!</h3>
-                    </button>
-                    <div>
-                      <img src={user.photoURL} alt="monika" />
-                    </div>
-                    <button onClick={logout}>LOGOUT</button>
-                  </div>
-                  // <Navigate replace to="/dashboard" />
-                )
+                !user ? <Authentication /> : <Navigate replace to="/home" />
               }
             />
+
+            <Route
+              path="/home"
+              element={user ? <Home /> : <Navigate replace to="/" />}
+            />
+
+            <Route path="*" element={<Navigate replace to="/" />} />
           </Routes>
         </Router>
       )}

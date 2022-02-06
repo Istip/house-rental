@@ -20,7 +20,12 @@ const ButtonItem = styled.button`
       : props.size === 'medium'
       ? '32px'
       : '48px'};
-  padding: 0 24px;
+  padding: ${(props) =>
+    props.size === 'small'
+      ? '0 8px'
+      : props.size === 'medium'
+      ? '0 12px'
+      : '0 24px'};
   width: ${({ block }) => (block ? '100%' : 'auto')};
   display: ${({ block }) => (block ? 'block' : '')};
   text-align: center;
