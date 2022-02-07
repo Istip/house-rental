@@ -1,26 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
-import { Button, Center, Icon } from '../../components/UI';
+import ImageGallery from 'react-image-gallery';
 
 const Home = () => {
-  const [show, setShow] = useState(true);
+  const images = [
+    {
+      original: 'https://picsum.photos/id/1018/1000/600/',
+    },
+    {
+      original: 'https://picsum.photos/id/1015/1000/800/',
+    },
+    {
+      original: 'https://picsum.photos/id/1019/1000/400/',
+    },
+  ];
 
   return (
     <div>
-      <Navbar show={show} setShow={setShow} />
-      <Center gap={10} direction="column">
-        <h1>Hello</h1>
-        <h3>You are logged in!</h3>
-        {!show && (
-          <Button
-            variant="secondary"
-            size="medium"
-            onClick={() => setShow(true)}
-          >
-            <Icon icon="menu" />
-          </Button>
-        )}
-      </Center>
+      <Navbar />
+
+      <ImageGallery
+        items={images}
+        lazyLoad
+        showThumbnails={false}
+        showPlayButton={false}
+        showBullets={true}
+      />
     </div>
   );
 };
