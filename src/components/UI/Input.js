@@ -20,7 +20,6 @@ const InputContainer = styled.div`
 const InputField = styled.input`
   width: 100%;
   outline: none;
-  border: none;
   border-radius: 2px;
   font-size: 14px;
   color: ${tokens.colors.primaryBlack};

@@ -6,6 +6,8 @@ import Facebook from './icons/facebook.icon';
 import Google from './icons/google.icon';
 import Menu from './icons/menu.icon';
 import Close from './icons/close.icon';
+import Search from './icons/search.icon';
+import Down from './icons/down.icon';
 
 const Icon = (props) => {
   const icons = {
@@ -13,6 +15,8 @@ const Icon = (props) => {
     google: <Google {...props} />,
     menu: <Menu {...props} />,
     close: <Close {...props} />,
+    search: <Search {...props} />,
+    down: <Down {...props} />,
   };
 
   return (

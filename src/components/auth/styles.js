@@ -31,3 +31,8 @@ export const Title = styled.div`
   justify-content: center;
   text-align: center;
 `;
+
+export const ButtonsWrapper = styled.div`
+  width: 80vw;
+  max-width: 500px;
+`;

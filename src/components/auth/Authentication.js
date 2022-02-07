@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
 import { useLogin } from '../../hooks/useLogin';
 import { tokens, Center, Text, Input, Button, Error, Divider } from '../UI';
-import { AuthForm, Background, Title } from './Authentication.styles';
+import { AuthForm, Background, Title } from './styles';
 import AuthenticationButtons from './AuthenticationButtons';
 import AuthenticationSwitcher from './AuthenticationSwitcher';
 

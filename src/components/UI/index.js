@@ -6,5 +6,6 @@ import Input from './Input';
 import Error from './Error';
 import Divider from './Divider';
 import Icon from './Icon';
+import Select from './Select';
 
-export { tokens, Center, Text, Button, Input, Error, Divider, Icon };
+export { tokens, Center, Text, Button, Input, Error, Divider, Icon, Select };

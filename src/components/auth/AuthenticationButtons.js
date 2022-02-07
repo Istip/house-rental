@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
 import { Button, Center, Icon } from '../UI';
+import { ButtonsWrapper } from './styles';
 
 const AuthenticationButtons = ({ signUpWithGoogle, signUpWithFacebook }) => {
   return (
-    <Wrapper>
+    <ButtonsWrapper>
       <Center gap="10" direction="column">
         <Button
           variant="facebook"
@@ -24,14 +24,9 @@ const AuthenticationButtons = ({ signUpWithGoogle, signUpWithFacebook }) => {
           Continue with Google
         </Button>
       </Center>
-    </Wrapper>
+    </ButtonsWrapper>
   );
 };
-
-const Wrapper = styled.div`
-  width: 80vw;
-  max-width: 500px;
-`;
 
 export default AuthenticationButtons;
 
