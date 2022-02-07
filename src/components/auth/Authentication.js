@@ -5,6 +5,7 @@ import { tokens, Center, Text, Input, Button, Error, Divider } from '../UI';
 import { AuthForm, Background, Title } from './styles';
 import AuthenticationButtons from './AuthenticationButtons';
 import AuthenticationSwitcher from './AuthenticationSwitcher';
+import Logo from '../../assets/Logo';
 
 const Authentication = () => {
   const state = { email: '', password: '', name: '' };
@@ -42,9 +43,12 @@ const Authentication = () => {
   return (
     <Background>
       <Title>
-        <Text tag="h1" color={tokens.colors.primary}>
-          Hargitai hazak
-        </Text>
+        <Center direction="column" gap={10}>
+          <Logo />
+          <Text tag="h1" color={tokens.colors.primary}>
+            Hargitai hazak
+          </Text>
+        </Center>
       </Title>
 
       <AuthenticationSwitcher

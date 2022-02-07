@@ -1,14 +1,14 @@
 const tokens = {
   colors: {
-    primary: '#4e36b6',
+    primary: '#8c4830',
 
-    primaryLight1: '#8776cd',
-    primaryLight2: '#bfb7e5',
-    primaryWhite: '#f8f7fc',
+    primaryLight1: '#aa7866',
+    primaryLight2: '#c8a79c',
+    primaryWhite: '#e6d7d1',
 
-    primaryDark1: '#35257c',
-    primaryDark2: '#1c1342',
-    primaryBlack: '#030207',
+    primaryDark1: '#683524',
+    primaryDark2: '#432317',
+    primaryBlack: '#1f100b',
 
     white: '#fff',
     darkGrey: '#111',
@@ -17,7 +17,7 @@ const tokens = {
 
     error: '#ad2b0e',
     success: '#0e8f4a',
-    warning: '#ffc04d',
+    warning: '#F2A950',
   },
 
   fontSize: {

@@ -8,9 +8,9 @@ export const Background = styled.div`
   height: 100vh;
   overflow: hidden;
   background-image: linear-gradient(
-      to bottom,
+      to top,
       transparent,
-      ${tokens.colors.white}
+      ${tokens.colors.warning}
     ),
     url(${bg});
   background-size: cover;
@@ -25,7 +25,7 @@ export const AuthForm = styled.form`
 `;
 
 export const Title = styled.div`
-  margin: 60px 0 20px;
+  margin: 80px 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;

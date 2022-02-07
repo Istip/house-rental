@@ -29,7 +29,7 @@ const DividerWrapper = styled.div`
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background ${(props) => props.color || `${tokens.colors.mediumGrey}`};
+  background ${(props) => props.color || `${tokens.colors.darkGrey}`};
 `;
 
 const TextWrapper = styled.div`

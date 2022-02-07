@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Center, Icon, Text, tokens } from '../UI';
 import { Nav, NavCloser } from './styles';
+import { useLogout } from '../../hooks/useLogout';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+
+  const { logout } = useLogout();
 
   return (
     <>
@@ -15,13 +18,19 @@ const Navbar = () => {
               <span>LOGO</span>
             </Center>
           </Text>
-          <Button
-            size="medium"
-            variant="secondary"
-            onClick={() => setShow(false)}
-          >
-            <Icon icon="close" />
-          </Button>
+
+          <Center gap={5}>
+            <Button size="medium" onClick={logout}>
+              Log Out
+            </Button>
+            <Button
+              size="medium"
+              variant="secondary"
+              onClick={() => setShow(false)}
+            >
+              <Icon icon="close" />
+            </Button>
+          </Center>
         </Center>
         {!show && (
           <NavCloser>
