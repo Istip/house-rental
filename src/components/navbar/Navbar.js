@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from '../../assets/Logo';
 import { Button, Center, Icon, Text, tokens } from '../UI';
 import { Nav, NavCloser } from './styles';
 import { useLogout } from '../../hooks/useLogout';
@@ -12,10 +13,9 @@ const Navbar = () => {
     <>
       <Nav show={show}>
         <Center height="100%" gap={10} between margin="0 20px">
-          <Text variant="h3" color={tokens.colors.primary}>
-            <Center gap={10}>
-              <span>🏡</span>
-              <span>LOGO</span>
+          <Text tag="div" variant="h3" color={tokens.colors.primary}>
+            <Center>
+              <Logo size={24} />
             </Center>
           </Text>
 

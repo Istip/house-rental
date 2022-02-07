@@ -44,7 +44,7 @@ const Authentication = () => {
     <Background>
       <Title>
         <Center direction="column" gap={10}>
-          <Logo />
+          <Logo color={tokens.colors.primary} />
           <Text tag="h1" color={tokens.colors.primary}>
             Hargitai hazak
           </Text>
