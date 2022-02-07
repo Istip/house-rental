@@ -3,7 +3,7 @@ import { Button, Center, Icon } from '../UI';
 import { Nav, NavCloser } from './Navbar.styles';
 
 const Navbar = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <>
