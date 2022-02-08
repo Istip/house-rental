@@ -7,7 +7,7 @@ const Header = () => {
     <Background>
       <Center height="calc(100% - 100px)">
         <Text tag="div" color={tokens.colors.primaryDark1}>
-          <h1>HARGITAI HAZAK</h1>
+          <h1>Hargitai Hazak</h1>
         </Text>
       </Center>
     </Background>

@@ -11,7 +11,7 @@ export const Background = styled.div`
       transparent,
       ${tokens.colors.white}
     ),
-    url(${bg});
+    linear-gradient(to top, transparent, ${tokens.colors.warning}), url(${bg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
