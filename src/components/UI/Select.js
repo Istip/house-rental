@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Text, Center, tokens, Icon } from './';
+import Button from './Button';
 
 const Select = ({ list, selected, setSelected, ...props }) => {
   const [visible, setVisible] = useState(false);
@@ -39,7 +40,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
       >
         <IconWrapper className={visible ? 'visible' : ''}>
           <Center style={{ height: '100%' }}>
-            <Icon icon="down" />
+            <Icon icon="down" size={12} color={tokens.colors.primary} />
           </Center>
         </IconWrapper>
 
@@ -135,7 +136,7 @@ const SelectMenu = styled.div`
   left: -1px;
   right: -1px;
   min-height: 37px;
-  max-height: 150px;
+  max-height: 234px;
   overflow: auto;
   scroll-behavior: smooth;
   background: ${tokens.colors.primaryLight4};
