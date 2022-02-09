@@ -21,7 +21,11 @@ export const SearchWrapper = styled.div`
   margin-top: -100px;
 `;
 export const HousesWrapper = styled.div`
-  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
 `;
 
 export const Card = styled.div`
@@ -30,13 +34,21 @@ export const Card = styled.div`
   border-radius: 2px;
   padding: 10px;
   cursor: pointer;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid transparent;
+  transition: 250ms ease;
+
+  &:hover {
+    border: 1px solid ${tokens.colors.primaryLight2};
+  }
 `;
 
 export const CardContent = styled.div`
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 10px 0 0;
 `;
 
 export const CardImage = styled.div`

@@ -4,15 +4,14 @@ import { HousesWrapper } from './styles';
 
 const Houses = (props) => {
   return (
-    <HousesWrapper>
-      <Center>
+    <>
+      <Center style={{ marginTop: '50px' }}>
         <Text variant="h2" color={tokens.colors.primaryDark1}>
           Talalatok
         </Text>
       </Center>
-
-      {props.children}
-    </HousesWrapper>
+      <HousesWrapper>{props.children}</HousesWrapper>
+    </>
   );
 };
 

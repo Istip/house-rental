@@ -53,7 +53,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
             variant="regular16"
             color={selected ? tokens.colors.primaryDark4 : '#757575'}
           >
-            {selected || 'Not selected yet'}
+            {selected || 'Select place'}
           </Text>
         </TextWrapper>
 
