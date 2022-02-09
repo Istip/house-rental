@@ -3,7 +3,7 @@ import { tokens } from '../UI';
 import bg from '../../assets/home.jpg';
 
 export const Background = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 50vh;
   overflow: hidden;
   background-image: linear-gradient(
