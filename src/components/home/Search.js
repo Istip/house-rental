@@ -15,7 +15,7 @@ const Search = () => {
           selected={selected}
           setSelected={setSelected}
         />
-        <Button>Search</Button>
+        <Button icon={<Icon icon="search" />}>Search</Button>
       </Center>
     </SearchWrapper>
   );

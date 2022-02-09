@@ -12,24 +12,32 @@ const Navbar = () => {
   return (
     <>
       <Nav show={show}>
-        <Center height="100%" gap={10} between margin="0 20px">
-          <Text tag="div" variant="h3" color={tokens.colors.primary}>
-            <Center>
-              <Logo size={24} />
-            </Center>
-          </Text>
+        <Center height="100%" margin="0 auto" style={{ maxWidth: '1440px' }}>
+          <Center
+            height="100%"
+            gap={10}
+            between
+            margin="0 20px"
+            style={{ width: '100%' }}
+          >
+            <Text tag="div" variant="h3" color={tokens.colors.primary}>
+              <Center>
+                <Logo size={24} />
+              </Center>
+            </Text>
 
-          <Center gap={5}>
-            <Button size="medium" onClick={logout}>
-              Log Out
-            </Button>
-            <Button
-              size="medium"
-              variant="secondary"
-              onClick={() => setShow(false)}
-            >
-              <Icon icon="close" />
-            </Button>
+            <Center gap={5}>
+              <Button size="medium" onClick={logout}>
+                Log Out
+              </Button>
+              <Button
+                size="medium"
+                variant="secondary"
+                onClick={() => setShow(false)}
+              >
+                <Icon icon="close" />
+              </Button>
+            </Center>
           </Center>
         </Center>
         {!show && (
