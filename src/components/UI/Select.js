@@ -13,6 +13,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
       return;
     }
     setVisible(false);
+    setSearch('');
   };
 
   const handleSelect = (item) => {
@@ -73,13 +74,20 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                 placeholder="Helyseg keresese..."
                 autoFocus
                 border
+                shadow
               />
             </InputWrapper>
 
             {list
               .filter((item) => {
-                if (!search) return true;
-                if (item.toLowerCase().includes(search.toLowerCase())) {
+                if (!search) return 'Helo';
+                if (
+                  item
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+                ) {
                   return true;
                 }
                 return null;

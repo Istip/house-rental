@@ -70,6 +70,7 @@ const Authentication = () => {
                 bottom="8px"
                 onChange={handleInput}
                 shadow
+                border
                 required
               />
             </>
@@ -85,6 +86,7 @@ const Authentication = () => {
             bottom="8px"
             onChange={handleInput}
             shadow
+            border
             required
           />
 
@@ -98,6 +100,7 @@ const Authentication = () => {
             bottom="20px"
             onChange={handleInput}
             shadow
+            border
             required
           />
 
