@@ -5,7 +5,7 @@ import { HousesWrapper } from './styles';
 const Houses = (props) => {
   return (
     <>
-      <Center style={{ marginTop: '50px' }}>
+      <Center style={{ margin: '50px 0 20px' }}>
         <Text variant="h2" color={tokens.colors.primaryDark1}>
           Talalatok
         </Text>

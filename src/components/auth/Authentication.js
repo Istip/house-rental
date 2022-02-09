@@ -61,6 +61,7 @@ const Authentication = () => {
           {isRegistration && (
             <>
               <Input
+                labelColor={tokens.colors.primaryWhite}
                 type="text"
                 id="name"
                 name="name"
@@ -70,13 +71,13 @@ const Authentication = () => {
                 bottom="8px"
                 onChange={handleInput}
                 shadow
-                border
                 required
               />
             </>
           )}
 
           <Input
+            labelColor={tokens.colors.primaryWhite}
             type="email"
             id="email"
             name="email"
@@ -86,11 +87,11 @@ const Authentication = () => {
             bottom="8px"
             onChange={handleInput}
             shadow
-            border
             required
           />
 
           <Input
+            labelColor={tokens.colors.primaryWhite}
             type="password"
             id="password"
             name="password"
@@ -100,7 +101,6 @@ const Authentication = () => {
             bottom="20px"
             onChange={handleInput}
             shadow
-            border
             required
           />
 
@@ -109,7 +109,9 @@ const Authentication = () => {
           </Button>
         </AuthForm>
 
-        <Divider padding="20px 60px">OR</Divider>
+        <Divider padding="20px 60px" color={tokens.colors.primaryWhite}>
+          OR
+        </Divider>
 
         <AuthenticationButtons
           signUpWithGoogle={signUpWithGoogle}

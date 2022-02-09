@@ -5,7 +5,10 @@ import { Text, tokens } from '.';
 const Input = (props) => {
   return (
     <InputContainer>
-      <Text variant="medium14" color={tokens.colors.primaryBlack}>
+      <Text
+        variant="medium14"
+        color={props.labelColor || tokens.colors.primaryBlack}
+      >
         {props.label && <label htmlFor={props.id}>{props.label}</label>}
       </Text>
       <InputField {...props} />
@@ -33,10 +36,6 @@ const InputField = styled.input`
   transition: 250ms ease;
   box-shadow: ${(props) =>
     props.shadow ? `0 0 10px 2px ${tokens.colors.primaryDark2}0D` : 'none'};
-
-  &:focus {
-    border-bottom: 1px solid ${tokens.colors.primary};
-  }
 
   &::placeholder {
     color: ${tokens.colors.mediumGrey};

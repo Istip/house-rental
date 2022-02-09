@@ -11,7 +11,8 @@ export const Background = styled.div`
       transparent,
       ${tokens.colors.white}
     ),
-    linear-gradient(to top, transparent, ${tokens.colors.warning}), url(${bg});
+    linear-gradient(to top, transparent, ${tokens.colors.primaryBlack}),
+    url(${bg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,8 +30,8 @@ export const HousesWrapper = styled.div`
 `;
 
 export const Card = styled.div`
-  background: ${tokens.colors.primaryWhite};
-  margin: 20px;
+  background: ${tokens.colors.whiteGrey};
+  margin: 0 20px 20px;
   border-radius: 2px;
   padding: 10px;
   cursor: pointer;
@@ -40,7 +41,7 @@ export const Card = styled.div`
   transition: 250ms ease;
 
   &:hover {
-    border: 1px solid ${tokens.colors.primaryLight2};
+    border: 1px solid ${tokens.colors.lightGrey};
   }
 `;
 

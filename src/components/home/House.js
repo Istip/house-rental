@@ -7,18 +7,18 @@ const House = ({ house }) => {
     <Card>
       <CardImage image={house.image} />
       <CardContent>
-        <Text color={tokens.colors.primary} variant="h2">
+        <Text color={tokens.colors.primaryDark2} variant="h2">
           {house.name}
         </Text>
-        <Text color={tokens.colors.primaryLight1} variant="medium14">
+        <Text color={tokens.colors.primaryDark1} variant="medium14">
           {house.place}
         </Text>
-        <Text color={tokens.colors.primaryLight1} variant="medium14">
+        <Text color={tokens.colors.primaryDark1} variant="medium14">
           {house.address}
         </Text>
 
         <Description>
-          <Text color={tokens.colors.primaryLight2} variant="regular14">
+          <Text color={tokens.colors.darkGrey} variant="regular14">
             {house.description.substring(0, 100)}...
           </Text>
         </Description>
@@ -30,8 +30,12 @@ const House = ({ house }) => {
             borderRadius: '2px',
           }}
         >
-          <Text variant="regular14">
-            <Text tag="span" variant="medium14">
+          <Text variant="regular14" color={tokens.colors.darkGrey}>
+            <Text
+              tag="span"
+              variant="medium14"
+              color={tokens.colors.primaryBlack}
+            >
               {house.price}
             </Text>{' '}
             lei / ejszaka

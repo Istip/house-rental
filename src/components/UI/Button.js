@@ -55,17 +55,20 @@ const ButtonItem = styled.button`
   }
 
   &.secondary {
-    color: ${tokens.colors.primary};
-    background: ${tokens.colors.primaryLight4};
-    border: 1px solid ${tokens.colors.primary};
+    color: ${tokens.colors.primaryLight1};
+    background: ${tokens.colors.white};
+    border: 1px solid ${tokens.colors.primaryWhite};
 
     &:hover {
+      color: ${tokens.colors.primary};
       background: ${tokens.colors.primaryLight2};
+      border: 1px solid ${tokens.colors.primaryLight1};
     }
 
     &:active {
       color: ${tokens.colors.white};
       background: ${tokens.colors.primaryLight1};
+      border: 1px solid ${tokens.colors.primaryLight1};
     }
   }
 
