@@ -8,9 +8,9 @@ const Search = () => {
 
   return (
     <SearchWrapper>
-      <Center gap={10} margin="0 20px">
+      <Center gap={10} margin="0 20px" maxWidth="500px">
         <Select
-          icon={<Icon icon="search" color={tokens.colors.primary} />}
+          icon={<Icon icon="location" color={tokens.colors.primary} />}
           list={placeNames}
           selected={selected}
           setSelected={setSelected}

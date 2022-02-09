@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Text, Center, tokens, Icon } from './';
-import Button from './Button';
+import { Text, Center, tokens, Icon, Input } from './';
 
 const Select = ({ list, selected, setSelected, ...props }) => {
   const [visible, setVisible] = useState(false);
+  const [search, setSearch] = useState('');
 
   const wrapperNode = useRef();
 
@@ -13,6 +13,12 @@ const Select = ({ list, selected, setSelected, ...props }) => {
       return;
     }
     setVisible(false);
+  };
+
+  const handleSelect = (item) => {
+    setSelected(item);
+    setVisible(false);
+    setSearch('');
   };
 
   useEffect(() => {
@@ -35,7 +41,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
       <SelectWrapper
         ref={wrapperNode}
         visible={visible}
-        onClick={() => setVisible(!visible)}
+        onClick={() => (!visible ? setVisible(true) : null)}
         hasLabel={props.label}
       >
         <IconWrapper className={visible ? 'visible' : ''}>
@@ -58,22 +64,42 @@ const Select = ({ list, selected, setSelected, ...props }) => {
 
         {visible && (
           <SelectMenu>
-            {list.map((item, i) => (
-              <SelectMenuItem
-                key={i}
-                onClick={() => setSelected(item)}
-                className={item === selected ? 'active' : ''}
-              >
-                <Center>
-                  <Text
-                    tag="div"
-                    variant={item === selected ? 'medium14' : 'regular14'}
-                  >
-                    {item}
-                  </Text>
-                </Center>
-              </SelectMenuItem>
-            ))}
+            <InputWrapper>
+              <Input
+                type="text"
+                name="search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Helyseg keresese..."
+                autoFocus
+                border
+              />
+            </InputWrapper>
+
+            {list
+              .filter((item) => {
+                if (!search) return true;
+                if (item.toLowerCase().includes(search.toLowerCase())) {
+                  return true;
+                }
+                return null;
+              })
+              .map((item, i) => (
+                <SelectMenuItem
+                  key={i}
+                  onClick={() => handleSelect(item)}
+                  className={item === selected ? 'active' : ''}
+                >
+                  <Center>
+                    <Text
+                      tag="div"
+                      variant={item === selected ? 'medium14' : 'regular14'}
+                    >
+                      {item}
+                    </Text>
+                  </Center>
+                </SelectMenuItem>
+              ))}
           </SelectMenu>
         )}
       </SelectWrapper>
@@ -83,6 +109,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
 
 // styled components
 const SelectWrapper = styled.div`
+  max-width: 600px;
   position: relative;
   width: 100%;
   height: 48px;
@@ -130,6 +157,16 @@ const TextWrapper = styled.div`
   margin-left: ${(props) => (props.icon ? '42px' : '12px')};
 `;
 
+const InputWrapper = styled.div`
+  scroll-snap-align: start;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: ${tokens.colors.white};
+`;
+
 const SelectMenu = styled.div`
   position: absolute;
   top: 46px;
@@ -139,7 +176,7 @@ const SelectMenu = styled.div`
   max-height: 234px;
   overflow: auto;
   scroll-behavior: smooth;
-  background: ${tokens.colors.primaryLight4};
+  background: ${tokens.colors.primaryWhite};
   border-radius: 0 0 4px 4px;
   border: 1px solid ${tokens.colors.primaryDark2};
   color: ${tokens.colors.primaryDark1};
@@ -153,13 +190,19 @@ const SelectMenuItem = styled.div`
   background: ${tokens.colors.white};
   transition: 250ms ease;
   scroll-snap-align: start;
+  color: ${tokens.colors.primaryBlack};
+
+  &:first-child {
+    margin-top: 50px;
+  }
 
   &.active {
-    background: ${tokens.colors.primaryLight2};
+    background: ${tokens.colors.lightGrey};
+    color: ${tokens.colors.primaryLight1};
   }
 
   &:hover {
-    background: ${tokens.colors.primaryLight2};
+    background: ${tokens.colors.lightGrey};
   }
 `;
 

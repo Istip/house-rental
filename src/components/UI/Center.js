@@ -11,8 +11,8 @@ const Centered = styled.div`
   justify-content: ${(props) => (props.between ? 'space-between' : 'center')};
   gap: ${(props) => `${props.gap}px` || 0};
   flex-direction: ${(props) => props.direction || 'row'};
-  height: ${(props) => (props.height ? props.height : 'auto')};
-  margin: ${(props) => (props.margin ? props.margin : 0)};
+  height: ${(props) => props.height || 'auto'};
+  margin: ${(props) => props.margin || 0};
 `;
 
 export default Center;

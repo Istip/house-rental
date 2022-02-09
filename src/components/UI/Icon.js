@@ -8,6 +8,7 @@ import Menu from './icons/menu.icon';
 import Close from './icons/close.icon';
 import Search from './icons/search.icon';
 import Down from './icons/down.icon';
+import Location from './icons/location.icon';
 
 const Icon = (props) => {
   const icons = {
@@ -17,6 +18,7 @@ const Icon = (props) => {
     close: <Close {...props} />,
     search: <Search {...props} />,
     down: <Down {...props} />,
+    location: <Location {...props} />,
   };
 
   return (
