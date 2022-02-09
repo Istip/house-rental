@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Text, Center, tokens, Icon, Input } from './';
+import { Text, Center, tokens, Input } from './';
 
 const Select = ({ list, selected, setSelected, ...props }) => {
   const [visible, setVisible] = useState(false);
