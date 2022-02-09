@@ -7,7 +7,8 @@ export const useCollection = (
   _firstQuery,
   _secondQuery,
   _orderBy,
-  _onlyMe = true
+  // 👇 this is responsible for connecting uid-s with house ids
+  _onlyMe = false
 ) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);

@@ -20,3 +20,6 @@ export const Background = styled.div`
 export const SearchWrapper = styled.div`
   margin-top: -100px;
 `;
+export const HousesWrapper = styled.div`
+  margin-top: 50px;
+`;

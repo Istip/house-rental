@@ -1,14 +1,26 @@
 import React from 'react';
-import { Header, Search } from '../../components/home';
+import { useCollection } from '../../hooks/useCollection';
+import { Header, Search, Houses, House } from '../../components/home';
 import Navbar from '../../components/navbar/Navbar';
 
 const Home = () => {
+  const { documents } = useCollection('houses');
+
+  if (!documents) {
+    return null;
+  }
+
   return (
     <div>
       <Navbar />
       <Header />
-
       <Search />
+
+      <Houses>
+        {documents.map((house) => (
+          <House key={house.id} house={house} />
+        ))}
+      </Houses>
     </div>
   );
 };
