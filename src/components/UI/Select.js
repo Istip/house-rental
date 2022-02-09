@@ -45,12 +45,6 @@ const Select = ({ list, selected, setSelected, ...props }) => {
         onClick={() => (!visible ? setVisible(true) : null)}
         hasLabel={props.label}
       >
-        <IconWrapper className={visible ? 'visible' : ''}>
-          <Center style={{ height: '100%' }}>
-            <Icon icon="down" size={12} color={tokens.colors.primary} />
-          </Center>
-        </IconWrapper>
-
         {props.icon && <span>{props.icon}</span>}
 
         <TextWrapper icon={props.icon}>
@@ -143,18 +137,6 @@ const SelectWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-`;
-
-const IconWrapper = styled.div`
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  right: 0;
-  transition: 250ms ease;
-
-  &.visible {
-    transform: rotate(180deg);
   }
 `;
 

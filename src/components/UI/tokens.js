@@ -37,6 +37,7 @@ export const fonts = {
   },
 
   h2: {
+    fontSize: '1.5rem',
     letterSpacing: '-0.7px',
     fontWeight: tokens.fontSize[700],
   },

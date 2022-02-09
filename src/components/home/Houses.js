@@ -6,7 +6,7 @@ const Houses = (props) => {
   return (
     <HousesWrapper>
       <Center>
-        <Text variant="h1" color={tokens.colors.primaryBlack}>
+        <Text variant="h2" color={tokens.colors.primaryDark1}>
           Talalatok
         </Text>
       </Center>
