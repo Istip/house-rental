@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Text, Center, tokens, Input } from './';
+import { Text, Center, tokens, Input, Button } from './';
 
 const Select = ({ list, selected, setSelected, ...props }) => {
   const [visible, setVisible] = useState(false);
@@ -18,6 +18,11 @@ const Select = ({ list, selected, setSelected, ...props }) => {
 
   const handleSelect = (item) => {
     setSelected(item);
+    setVisible(false);
+    setSearch('');
+  };
+
+  const handleClose = () => {
     setVisible(false);
     setSearch('');
   };
@@ -60,6 +65,15 @@ const Select = ({ list, selected, setSelected, ...props }) => {
         {visible && (
           <SelectMenu>
             <InputWrapper>
+              <Button
+                variant="neutral"
+                size="small"
+                block
+                onClick={handleClose}
+              >
+                Cancel
+              </Button>
+
               <Input
                 type="text"
                 name="search"
@@ -96,6 +110,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                     <Text
                       tag="div"
                       variant={item === selected ? 'medium14' : 'regular14'}
+                      style={{ textAlign: 'center' }}
                     >
                       {item}
                     </Text>
@@ -151,8 +166,10 @@ const InputWrapper = styled.div`
   scroll-snap-align: start;
   min-height: 50px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   padding: 10px 20px;
   background: ${tokens.colors.white};
 `;
@@ -166,7 +183,7 @@ const SelectMenu = styled.div`
   max-height: 234px;
   overflow: auto;
   scroll-behavior: smooth;
-  background: ${tokens.colors.primaryWhite};
+  background: ${tokens.colors.white};
   border-radius: 0 0 4px 4px;
   border: 1px solid ${tokens.colors.primaryDark2};
   color: ${tokens.colors.primaryDark1};
@@ -181,6 +198,7 @@ const SelectMenuItem = styled.div`
   transition: 250ms ease;
   scroll-snap-align: start;
   color: ${tokens.colors.primaryBlack};
+  background: ${(props) => (props.firstElement ? 'red' : '')}
 
   &:first-child {
     margin-top: 50px;
