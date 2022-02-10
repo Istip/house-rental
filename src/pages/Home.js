@@ -1,7 +1,7 @@
 import React from 'react';
-import { useCollection } from '../../hooks/useCollection';
-import { Header, Search, Houses, House } from '../../components/home';
-import Navbar from '../../components/navbar/Navbar';
+import { useCollection } from '../hooks/useCollection';
+import { Header, Search, Houses, House } from '../components/home';
+import Navbar from '../components/navbar/Navbar';
 
 const Home = () => {
   const { documents } = useCollection('houses');

@@ -9,7 +9,8 @@ import {
 import { Authentication } from './components/auth/';
 
 // pages
-import Home from './pages/home/Home';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -30,6 +31,8 @@ function App() {
               path="/home"
               element={user ? <Home /> : <Navigate replace to="/" />}
             />
+
+            <Route path="/houses/:id" element={<Profile />} />
 
             <Route path="*" element={<Navigate replace to="/" />} />
           </Routes>

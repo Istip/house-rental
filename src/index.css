@@ -20,3 +20,7 @@ h3 {
   letter-spacing: -0.7px;
   font-weight: 900;
 }
+
+a {
+  text-decoration: none;
+}
