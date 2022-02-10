@@ -1,11 +1,18 @@
 import React from 'react';
 import { Center, Text, tokens } from '../UI';
 import { Card, CardContent, CardImage, Description } from './styles';
+import housePlaceholder from '../../assets/housePlaceholder.png';
 
 const House = ({ house }) => {
+  const textStyle = {
+    padding: '20px 10px',
+    background: `${tokens.colors.white}`,
+    borderRadius: '8px',
+  };
+
   return (
     <Card>
-      <CardImage image={house.image} />
+      <CardImage image={house.image || housePlaceholder} />
       <CardContent>
         <Text color={tokens.colors.primaryDark2} variant="h2">
           {house.name}
@@ -23,13 +30,7 @@ const House = ({ house }) => {
           </Text>
         </Description>
 
-        <Center
-          style={{
-            padding: '10px',
-            background: `${tokens.colors.white}`,
-            borderRadius: '2px',
-          }}
-        >
+        <Center style={textStyle}>
           <Text variant="regular14" color={tokens.colors.darkGrey}>
             <Text
               tag="span"

@@ -187,12 +187,12 @@ const SelectMenuItem = styled.div`
   }
 
   &.active {
-    background: ${tokens.colors.lightGrey};
-    color: ${tokens.colors.primaryLight1};
+    background: ${tokens.colors.whiteGrey};
+    color: ${tokens.colors.primary};
   }
 
   &:hover {
-    background: ${tokens.colors.lightGrey};
+    background: ${tokens.colors.whiteGrey};
   }
 `;
 

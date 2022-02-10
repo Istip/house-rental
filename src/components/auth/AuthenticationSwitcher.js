@@ -15,7 +15,7 @@ const AuthenticationSwitcher = ({ isRegistration, setisRegistration }) => {
       style={{ margin: '0 30vw', cursor: 'pointer' }}
     >
       <div style={{ padding: '10px 0' }}>
-        <Text tag="span" variant="regular12" color={tokens.colors.primaryWhite}>
+        <Text tag="span" variant="regular12" color={tokens.colors.primaryDark2}>
           Switch to
         </Text>
       </div>

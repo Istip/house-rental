@@ -11,8 +11,7 @@ export const Background = styled.div`
       transparent,
       ${tokens.colors.white}
     ),
-    linear-gradient(to top, transparent, ${tokens.colors.primaryBlack}),
-    url(${bg});
+    linear-gradient(to top, transparent, ${tokens.colors.primary}), url(${bg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -30,9 +29,9 @@ export const HousesWrapper = styled.div`
 `;
 
 export const Card = styled.div`
-  background: ${tokens.colors.whiteGrey};
+  background: ${tokens.colors.primaryWhite};
   margin: 0 20px 20px;
-  border-radius: 2px;
+  border-radius: 12px;
   padding: 10px;
   cursor: pointer;
   width: 100%;
@@ -41,21 +40,19 @@ export const Card = styled.div`
   transition: 250ms ease;
 
   &:hover {
-    border: 1px solid ${tokens.colors.lightGrey};
+    border: 1px solid ${tokens.colors.primaryLight2};
   }
 `;
 
 export const CardContent = styled.div`
   width: 100%;
-  justify-content: center;
-  flex-direction: column;
   padding: 10px 0 0;
 `;
 
 export const CardImage = styled.div`
   width: 100%;
   height: 200px;
-  border-radius: 2px;
+  border-radius: 8px;
   background-repeat: no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,6 +67,5 @@ export const CardImage = styled.div`
 
 export const Description = styled.div`
   margin: 10px 0 20px;
-  max-height: 60px;
   overflow-y: hidden;
 `;

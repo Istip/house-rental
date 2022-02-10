@@ -61,7 +61,6 @@ const Authentication = () => {
           {isRegistration && (
             <>
               <Input
-                labelColor={tokens.colors.primaryWhite}
                 type="text"
                 id="name"
                 name="name"
@@ -77,7 +76,6 @@ const Authentication = () => {
           )}
 
           <Input
-            labelColor={tokens.colors.primaryWhite}
             type="email"
             id="email"
             name="email"
@@ -91,7 +89,6 @@ const Authentication = () => {
           />
 
           <Input
-            labelColor={tokens.colors.primaryWhite}
             type="password"
             id="password"
             name="password"
