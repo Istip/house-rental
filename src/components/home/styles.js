@@ -30,6 +30,7 @@ export const HousesWrapper = styled.div`
 `;
 
 export const Card = styled.div`
+  position: relative;
   background: ${tokens.colors.primaryWhite};
   margin: 0 20px 20px;
   border-radius: 12px;
@@ -43,6 +44,25 @@ export const Card = styled.div`
   &:hover {
     border: 1px solid ${tokens.colors.primaryLight2};
   }
+
+  &.promo {
+    border: 1px solid ${tokens.colors.primary};
+  }
+`;
+
+export const Promo = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  color: ${tokens.colors.white};
+  background: ${tokens.colors.primary};
 `;
 
 export const CardContent = styled.div`

@@ -70,7 +70,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
         </TextWrapper>
 
         {visible && (
-          <SelectMenu>
+          <SelectMenu onMouseLeave={() => setVisible(false)}>
             <InputWrapper>
               <Input
                 type="text"

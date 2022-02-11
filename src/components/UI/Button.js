@@ -78,13 +78,12 @@ const ButtonItem = styled.button`
     border: 1px solid ${tokens.colors.whiteGrey};
 
     &:hover {
-      color: ${tokens.colors.darkGrey};
       background: ${tokens.colors.lightGrey};
       border: 1px solid ${tokens.colors.lightGrey};
     }
 
     &:active {
-      color: ${tokens.colors.darkGrey};
+      color: ${tokens.colors.white};
       background: ${tokens.colors.mediumGrey};
       border: 1px solid ${tokens.colors.mediumGrey};
     }

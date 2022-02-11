@@ -16,7 +16,7 @@ const tokens = {
     lightGrey: '#bdbdca',
     whiteGrey: '#f3f3f5',
 
-    error: '#8e0a0a',
+    error: '#b8152d',
     success: '#0f6621',
     warning: '#f6b165',
   },

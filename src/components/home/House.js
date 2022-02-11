@@ -1,6 +1,6 @@
 import React from 'react';
 import { Center, Text, tokens } from '../UI';
-import { Card, CardContent, CardImage, Description } from './styles';
+import { Card, CardContent, CardImage, Description, Promo } from './styles';
 import housePlaceholder from '../../assets/housePlaceholder.png';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +12,13 @@ const House = ({ house }) => {
   };
 
   return (
-    <Card>
+    <Card className={house.promo ? 'promo' : ''}>
+      {house.promo && (
+        <Promo>
+          <Text variant="black12">Promoted</Text>
+        </Promo>
+      )}
+
       <Link to={`/houses/${house.id}`}>
         <CardImage image={house.image || housePlaceholder} />
         <CardContent>
