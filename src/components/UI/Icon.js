@@ -12,6 +12,7 @@ import Location from './icons/location.icon';
 import Price from './icons/price.icon';
 import Person from './icons/person.icon';
 import People from './icons/people.icon';
+import ChevronRight from './icons/chevronRight.icon';
 
 const Icon = (props) => {
   const icons = {
@@ -25,6 +26,7 @@ const Icon = (props) => {
     price: <Price {...props} />,
     person: <Person {...props} />,
     people: <People {...props} />,
+    chevronRight: <ChevronRight {...props} />,
   };
 
   return (

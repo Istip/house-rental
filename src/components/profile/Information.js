@@ -12,7 +12,7 @@ const Information = ({ house }) => {
   return (
     <List>
       {data.map((item, i) => (
-        <>
+        <span key={i}>
           {i === 1 && (
             <Divider color={tokens.colors.primaryLight2} padding="20px 0" />
           )}
@@ -35,7 +35,7 @@ const Information = ({ house }) => {
               </Center>
             </Center>
           </ListItem>
-        </>
+        </span>
       ))}
     </List>
   );

@@ -17,9 +17,11 @@ const Home = () => {
       <Search />
 
       <Houses>
-        {documents.map((house) => (
-          <House key={house.id} house={house} />
-        ))}
+        {documents
+          .sort((house) => (house.promo ? -1 : 1))
+          .map((house) => (
+            <House key={house.id} house={house} />
+          ))}
       </Houses>
     </div>
   );
