@@ -29,6 +29,9 @@ const Description = ({ house }) => {
       <Information house={house} />
 
       <div style={{ padding: '20px', lineHeight: '160%' }}>
+        <Text variant="medium14" color={tokens.colors.primary}>
+          Rovid leiras:
+        </Text>
         <Text variant="regular14" color={tokens.colors.darkGrey}>
           {house.description}
         </Text>

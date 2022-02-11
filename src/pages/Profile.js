@@ -7,7 +7,7 @@ import { useCollection } from '../hooks/useCollection';
 import { LinkWrapper } from './styles';
 import { Link, useParams } from 'react-router-dom';
 
-import { Button, Center, Error } from '../components/UI';
+import { Button, Center, Error, Icon, tokens } from '../components/UI';
 import { Description } from '../components/profile';
 
 const Home = () => {
@@ -15,24 +15,28 @@ const Home = () => {
 
   const { documents, error } = useCollection('houses', ['id', '==', id]);
 
+  // random number used to randomize image number
+  // remove when replaced with real images from the databse
+  const randomNumber = Math.ceil(Math.random() * 100);
+
   const images = [
     {
-      original: 'https://picsum.photos/id/1012/1000/600/',
+      original: `https://picsum.photos/id/1${randomNumber - 1}/1000/600/`,
     },
     {
-      original: 'https://picsum.photos/id/1018/1000/600/',
+      original: `https://picsum.photos/id/1${randomNumber + 1}/1000/600/`,
     },
     {
-      original: 'https://picsum.photos/id/1010/1000/600/',
+      original: `https://picsum.photos/id/1${randomNumber - 2}/1000/600/`,
     },
     {
-      original: 'https://picsum.photos/id/1015/1000/800/',
+      original: `https://picsum.photos/id/1${randomNumber + 2}/1000/600/`,
     },
     {
-      original: 'https://picsum.photos/id/1022/1000/600/',
+      original: `https://picsum.photos/id/1${randomNumber - 3}/1000/600/`,
     },
     {
-      original: 'https://picsum.photos/id/1025/1000/400/',
+      original: `https://picsum.photos/id/1${randomNumber + 3}/1000/600/`,
     },
   ];
 
@@ -62,8 +66,18 @@ const Home = () => {
 
       <LinkWrapper>
         <Link to="/">
-          <Button variant="neutral" block>
-            « Go back
+          <Button
+            variant="neutral"
+            block
+            icon={
+              <Icon
+                icon="chevronLeft"
+                size={12}
+                color={tokens.colors.primaryBlack}
+              />
+            }
+          >
+            Vissza
           </Button>
         </Link>
       </LinkWrapper>
