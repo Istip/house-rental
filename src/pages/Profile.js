@@ -1,10 +1,13 @@
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import ImageGallery from 'react-image-gallery';
+import housePlaceholder from '../assets/housePlaceholder.png';
+
 import { useCollection } from '../hooks/useCollection';
-import { Button, Error } from '../components/UI';
-import { Link, useParams } from 'react-router-dom';
 import { LinkWrapper } from './styles';
+import { Link, useParams } from 'react-router-dom';
+
+import { Button, Center, Error } from '../components/UI';
 import { Description } from '../components/profile';
 
 const Home = () => {
@@ -14,13 +17,22 @@ const Home = () => {
 
   const images = [
     {
+      original: 'https://picsum.photos/id/1012/1000/600/',
+    },
+    {
       original: 'https://picsum.photos/id/1018/1000/600/',
+    },
+    {
+      original: 'https://picsum.photos/id/1010/1000/600/',
     },
     {
       original: 'https://picsum.photos/id/1015/1000/800/',
     },
     {
-      original: 'https://picsum.photos/id/1019/1000/400/',
+      original: 'https://picsum.photos/id/1022/1000/600/',
+    },
+    {
+      original: 'https://picsum.photos/id/1025/1000/400/',
     },
   ];
 
@@ -40,11 +52,12 @@ const Home = () => {
 
       <ImageGallery
         items={images}
-        lazyLoad
+        originalAlt={housePlaceholder}
         showFullscreenButton={false}
         showThumbnails={false}
         showPlayButton={false}
         showBullets={true}
+        lazyLoad
       />
 
       <LinkWrapper>
@@ -56,6 +69,14 @@ const Home = () => {
       </LinkWrapper>
 
       <Description house={house} />
+
+      <Center>
+        <img
+          src="https://www.google.com/maps/d/thumbnail?mid=1GjkX260B59mJ45WveZEV0tepBz8&hl=en"
+          alt={house.name}
+          style={{ width: '100%', height: 'auto', margin: '20px' }}
+        />
+      </Center>
     </div>
   );
 };

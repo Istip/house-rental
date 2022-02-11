@@ -56,24 +56,22 @@ const Select = ({ list, selected, setSelected, ...props }) => {
           <Text
             tag="div"
             variant="regular16"
-            color={selected ? tokens.colors.primaryDark4 : '#757575'}
+            style={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              color: selected
+                ? tokens.colors.primaryBlack
+                : tokens.colors.mediumGrey,
+            }}
           >
-            {selected || 'Select place'}
+            {selected || 'Hova kivankozol?'}
           </Text>
         </TextWrapper>
 
         {visible && (
           <SelectMenu>
             <InputWrapper>
-              <Button
-                variant="neutral"
-                size="small"
-                block
-                onClick={handleClose}
-              >
-                Cancel
-              </Button>
-
               <Input
                 type="text"
                 name="search"
@@ -84,6 +82,15 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                 border
                 shadow
               />
+
+              <Button
+                variant="neutral"
+                size="small"
+                block
+                onClick={handleClose}
+              >
+                Cancel
+              </Button>
             </InputWrapper>
 
             {list

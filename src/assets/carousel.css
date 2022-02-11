@@ -10,13 +10,26 @@
   height: 50vh;
 }
 
+.image-gallery-bullets-container {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 5px !important;
+  width: fit-content;
+  margin: 0 auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .image-gallery-bullet {
   border: 1px solid #fff !important;
   background: #fff !important;
+  box-shadow: none !important;
+  transform: scale(0.75) !important;
 }
 
 .image-gallery-bullet.active {
-  border: 1px solid #8776cd !important;
-  background: #8776cd !important;
+  border: 1px solid #668a4e !important;
+  background: #668a4e !important;
   transform: scale(1.5) !important;
 }

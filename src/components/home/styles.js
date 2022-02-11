@@ -11,7 +11,7 @@ export const Background = styled.div`
       transparent,
       ${tokens.colors.white}
     ),
-    linear-gradient(to top, transparent, ${tokens.colors.primary}), url(${bg});
+    linear-gradient(to top, transparent, ${tokens.colors.primary}99), url(${bg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +20,7 @@ export const Background = styled.div`
 export const SearchWrapper = styled.div`
   margin-top: -100px;
 `;
+
 export const HousesWrapper = styled.div`
   display: flex;
   align-items: center;

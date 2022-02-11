@@ -1,14 +1,14 @@
 const tokens = {
   colors: {
-    primary: '#ff7034',
+    primary: '#668a4e',
 
-    primaryLight1: '#ff9c73',
-    primaryLight2: '#ffc9b2',
-    primaryWhite: '#fff5f1',
+    primaryLight1: '#95ae85',
+    primaryLight2: '#c5d3bc',
+    primaryWhite: '#f4f7f3',
 
-    primaryDark1: '#b04d24',
-    primaryDark2: '#612b14',
-    primaryBlack: '#120804',
+    primaryDark1: '#465f36',
+    primaryDark2: '#27341e',
+    primaryBlack: '#070a05',
 
     white: '#fff',
     darkGrey: '#4a4a51',
