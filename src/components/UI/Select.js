@@ -49,10 +49,12 @@ const Select = ({ list, selected, setSelected, ...props }) => {
         visible={visible}
         onClick={() => (!visible ? setVisible(true) : null)}
         hasLabel={props.label}
+        small={props.small}
+        bottom={props.bottom}
       >
         {props.icon && <span>{props.icon}</span>}
 
-        <TextWrapper icon={props.icon}>
+        <TextWrapper icon={props.icon} small={props.small}>
           <Text
             tag="div"
             variant="regular16"
@@ -62,15 +64,18 @@ const Select = ({ list, selected, setSelected, ...props }) => {
               textOverflow: 'ellipsis',
               color: selected
                 ? tokens.colors.primaryBlack
-                : tokens.colors.mediumGrey,
+                : tokens.colors.lightGrey,
             }}
           >
-            {selected || 'Hova kivankozol?'}
+            {selected || props.placeholder}
           </Text>
         </TextWrapper>
 
         {visible && (
-          <SelectMenu onMouseLeave={() => setVisible(false)}>
+          <SelectMenu
+            onMouseLeave={() => setVisible(false)}
+            small={props.small}
+          >
             <InputWrapper>
               <Input
                 type="text"
@@ -83,13 +88,8 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                 shadow
               />
 
-              <Button
-                variant="neutral"
-                size="small"
-                block
-                onClick={handleClose}
-              >
-                Cancel
+              <Button variant="error" size="small" block onClick={handleClose}>
+                Mégse
               </Button>
             </InputWrapper>
 
@@ -112,13 +112,20 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                   key={i}
                   onClick={() => handleSelect(item)}
                   className={item === selected ? 'active' : ''}
+                  small={props.small}
                 >
                   <Center>
                     <Text
                       tag="div"
                       variant={item === selected ? 'medium14' : 'regular14'}
-                      style={{ textAlign: 'center' }}
                     >
+                      {item}
+                      <br />
+                    </Text>
+                  </Center>
+
+                  <Center>
+                    <Text variant="regular10" color={tokens.colors.mediumGrey}>
                       {item}
                     </Text>
                   </Center>
@@ -136,9 +143,9 @@ const SelectWrapper = styled.div`
   max-width: 600px;
   position: relative;
   width: 100%;
-  height: 48px;
+  height: ${(props) => (props.small ? '35px' : '42px')};
   background: ${tokens.colors.white};
-  border-radius: ${(props) => (props.visible ? '4px 4px 0 0' : '4px')};
+  border-radius: ${(props) => (props.visible ? '2px 2px 0 0' : '2px')};
   border: ${(props) =>
     props.visible
       ? `1px solid ${tokens.colors.primaryLight1}`
@@ -146,6 +153,7 @@ const SelectWrapper = styled.div`
   cursor: pointer;
   margin-top: ${(props) => (props.hasLabel ? '2px' : 0)};
   transition: 250ms ease;
+  margin-bottom: ${(props) => (props.bottom ? props.bottom : 0)};
 
   &:hover {
     border: 1px solid ${tokens.colors.primaryDark1};
@@ -154,7 +162,7 @@ const SelectWrapper = styled.div`
   span {
     position: absolute;
     width: 48px;
-    height: 46px;
+    height: 40px;
     left: 0;
     display: flex;
     align-items: center;
@@ -167,6 +175,7 @@ const TextWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-left: ${(props) => (props.icon ? '42px' : '12px')};
+  font-size: ${(props) => (props.small ? '14px' : '16px')};
 `;
 
 const InputWrapper = styled.div`
@@ -183,7 +192,7 @@ const InputWrapper = styled.div`
 
 const SelectMenu = styled.div`
   position: absolute;
-  top: 46px;
+  top: ${(props) => (props.small ? '33px' : '40px')};
   left: -1px;
   right: -1px;
   min-height: 37px;
@@ -200,12 +209,13 @@ const SelectMenu = styled.div`
 
 const SelectMenuItem = styled.div`
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   background: ${tokens.colors.white};
   transition: 250ms ease;
   scroll-snap-align: start;
   color: ${tokens.colors.primaryBlack};
   background: ${(props) => (props.firstElement ? 'red' : '')}
+  font-size: ${(props) => (props.small ? '12px' : '14px')}
 
   &:first-child {
     margin-top: 50px;

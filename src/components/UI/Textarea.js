@@ -25,6 +25,7 @@ const TextfieldWrapper = styled.div`
 
 const Textfield = styled.textarea`
   outline: none;
+  resize: vertical;
   width: 100%;
   border: 1px solid ${tokens.colors.primaryLight2};
   border-radius: 2px;

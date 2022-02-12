@@ -11,6 +11,7 @@ const Search = () => {
       <Center gap={10} margin="0 20px" maxWidth="500px">
         <Select
           icon={<Icon icon="location" color={tokens.colors.primary} />}
+          placeholder="Hova kivankozol?"
           list={placeNames}
           selected={selected}
           setSelected={setSelected}

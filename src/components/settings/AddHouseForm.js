@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { placeNames } from '../../assets/placeList';
 import { Button, Divider, Input, Select, Text, Textarea, tokens } from '../UI';
 
 const AddHouseForm = () => {
+  const [selected, setSelected] = useState('');
+
   return (
     <FormWrapper>
       <Text variant="h3" color={tokens.colors.primaryDark2}>
@@ -21,6 +24,16 @@ const AddHouseForm = () => {
         required
         border
         shadow
+      />
+
+      <Select
+        label="Haz helye"
+        placeholder="Valassz a listabol"
+        list={placeNames}
+        selected={selected}
+        setSelected={setSelected}
+        bottom="8px"
+        small
       />
 
       <Input
@@ -44,10 +57,8 @@ const AddHouseForm = () => {
         bottom="8px"
         required
         shadow
-        rows={5}
+        rows={6}
       />
-
-      <Select label="Haz helye" />
 
       <br />
 
