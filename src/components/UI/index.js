@@ -8,6 +8,7 @@ import Divider from './Divider';
 import Icon from './Icon';
 import Select from './Select';
 import Rating from './Rating';
+import Avatar from './Avatar';
 
 export {
   tokens,
@@ -20,4 +21,5 @@ export {
   Icon,
   Select,
   Rating,
+  Avatar,
 };

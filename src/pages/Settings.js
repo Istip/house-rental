@@ -1,9 +1,24 @@
 import React from 'react';
+import Navbar from '../components/navbar/Navbar';
+import { Avatar, Button } from '../components/UI';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 const Settings = () => {
+  const { user } = useAuthContext();
+
+  console.log({ user });
+
   return (
     <div>
-      Hello <b>Settings</b> my old friend!
+      <Navbar />
+      Hello{' '}
+      <Button>
+        <Avatar name={user.displayName} image={user.photoURL} />
+      </Button>{' '}
+      my old friend!
+      <b>
+        <Avatar name={user.displayName} />
+      </b>
     </div>
   );
 };
