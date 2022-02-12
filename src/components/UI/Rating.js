@@ -22,8 +22,8 @@ const Rating = ({ rate }) => {
           <Hearts number={roundedRate} icon="heart" />
           <Hearts number={emptyHeart} icon="heartEmpty" />
         </Center>
-        <Text variant="regular12" color={tokens.colors.lightGrey}>
-          (by 12 rates)
+        <Text variant="regular10" color={tokens.colors.lightGrey}>
+          ({rate} - 12 szavazo alapjan)
         </Text>
       </RateWrapper>
     </Text>

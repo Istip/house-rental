@@ -4,7 +4,6 @@ import ImageGallery from 'react-image-gallery';
 import housePlaceholder from '../assets/housePlaceholder.png';
 
 import { useCollection } from '../hooks/useCollection';
-import { LinkWrapper } from './styles';
 import { Link, useParams } from 'react-router-dom';
 
 import { Button, Center, Error, Icon, tokens } from '../components/UI';
@@ -17,7 +16,7 @@ const Home = () => {
 
   // random number used to randomize image number
   // remove when replaced with real images from the databse
-  const randomNumber = Math.ceil(Math.random() * 100);
+  const randomNumber = Math.ceil(Math.random() * 20);
 
   const images = [
     {
@@ -64,7 +63,7 @@ const Home = () => {
         lazyLoad
       />
 
-      <LinkWrapper>
+      <Center gap={20} margin="20px">
         <Link to="/">
           <Button
             variant="neutral"
@@ -80,7 +79,14 @@ const Home = () => {
             Vissza
           </Button>
         </Link>
-      </LinkWrapper>
+        <Button
+          block
+          icon={<Icon icon="phone" size={18} />}
+          onClick={() => window.open('tel:0743641811', '_self')}
+        >
+          Hívás
+        </Button>
+      </Center>
 
       <Description house={house} />
 
