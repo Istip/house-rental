@@ -14,6 +14,8 @@ import Person from './icons/person.icon';
 import People from './icons/people.icon';
 import ChevronRight from './icons/chevronRight.icon';
 import ChevronLeft from './icons/chevronLeft.icon';
+import Heart from './icons/heart.icon';
+import HeartEmpty from './icons/heartEmpty.icon';
 
 const Icon = (props) => {
   const icons = {
@@ -29,6 +31,8 @@ const Icon = (props) => {
     people: <People {...props} />,
     chevronRight: <ChevronRight {...props} />,
     chevronLeft: <ChevronLeft {...props} />,
+    heart: <Heart {...props} />,
+    heartEmpty: <HeartEmpty {...props} />,
   };
 
   return (

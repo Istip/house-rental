@@ -7,5 +7,17 @@ import Error from './Error';
 import Divider from './Divider';
 import Icon from './Icon';
 import Select from './Select';
+import Rating from './Rating';
 
-export { tokens, Center, Text, Button, Input, Error, Divider, Icon, Select };
+export {
+  tokens,
+  Center,
+  Text,
+  Button,
+  Input,
+  Error,
+  Divider,
+  Icon,
+  Select,
+  Rating,
+};

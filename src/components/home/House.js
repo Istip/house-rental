@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Center, Icon, Text, tokens } from '../UI';
+import { Center, Icon, Rating, Text, tokens } from '../UI';
 import { Card, CardContent, CardImage, Description, Promo } from './styles';
 import housePlaceholder from '../../assets/housePlaceholder.png';
 
@@ -26,9 +26,7 @@ const House = ({ house }) => {
           <Text color={tokens.colors.primaryDark2} variant="h2">
             {house.name}
           </Text>
-
           <div style={{ marginBottom: '10px' }} />
-
           <Text color={tokens.colors.primaryDark1} variant="medium14">
             {house.place}
           </Text>
@@ -41,6 +39,11 @@ const House = ({ house }) => {
               {house.description.substring(0, 100)}...
             </Text>
           </Description>
+
+          <Text tag="div" variant="medium14" color={tokens.colors.warning}>
+            <Rating rate={house.rating} />
+          </Text>
+          <br />
 
           <Center style={textStyle} between>
             <Text variant="regular14" color={tokens.colors.darkGrey}>
