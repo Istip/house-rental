@@ -9,6 +9,7 @@ import Icon from './Icon';
 import Select from './Select';
 import Rating from './Rating';
 import Avatar from './Avatar';
+import Textarea from './Textarea';
 
 export {
   tokens,
@@ -22,4 +23,5 @@ export {
   Select,
   Rating,
   Avatar,
+  Textarea,
 };

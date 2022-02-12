@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Divider, Input, Select, Text, tokens } from '../UI';
+import { Button, Divider, Input, Select, Text, Textarea, tokens } from '../UI';
 
 const AddHouseForm = () => {
   return (
@@ -35,7 +35,7 @@ const AddHouseForm = () => {
         shadow
       />
 
-      <Input
+      <Textarea
         type="text"
         id="name"
         name="name"
@@ -43,8 +43,8 @@ const AddHouseForm = () => {
         label="Leiras"
         bottom="8px"
         required
-        border
         shadow
+        rows={5}
       />
 
       <Select label="Haz helye" />
