@@ -34,16 +34,13 @@ const House = ({ house }) => {
             {house.address}
           </Text>
 
+          {house.rating && <Rating rate={house.rating} />}
+
           <Description>
             <Text color={tokens.colors.darkGrey} variant="regular14">
               {house.description.substring(0, 100)}...
             </Text>
           </Description>
-
-          <Text tag="div" variant="medium14" color={tokens.colors.warning}>
-            <Rating rate={house.rating} />
-          </Text>
-          <br />
 
           <Center style={textStyle} between>
             <Text variant="regular14" color={tokens.colors.darkGrey}>
