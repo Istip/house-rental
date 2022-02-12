@@ -11,6 +11,7 @@ import { Authentication } from './components/auth/';
 // pages
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -30,6 +31,11 @@ function App() {
             <Route
               path="/home"
               element={user ? <Home /> : <Navigate replace to="/" />}
+            />
+
+            <Route
+              path="/settings"
+              element={user ? <Settings /> : <Navigate replace to="/" />}
             />
 
             <Route path="/houses/:id" element={<Profile />} />

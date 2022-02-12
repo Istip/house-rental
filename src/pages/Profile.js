@@ -63,7 +63,7 @@ const Home = () => {
         lazyLoad
       />
 
-      <Center gap={20} margin="20px">
+      <Center gap={10} margin="20px">
         <Link to="/">
           <Button
             variant="neutral"

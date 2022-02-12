@@ -3,6 +3,7 @@ import Logo from '../../assets/Logo';
 import { Button, Center, Icon, Text, tokens } from '../UI';
 import { Nav, NavCloser } from './styles';
 import { useLogout } from '../../hooks/useLogout';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -22,7 +23,9 @@ const Navbar = () => {
           >
             <Text tag="div" variant="h3" color={tokens.colors.primary}>
               <Center>
-                <Logo size={24} />
+                <Link to="/home">
+                  <Logo size={24} color={tokens.colors.primary} />
+                </Link>
               </Center>
             </Text>
 
@@ -30,6 +33,14 @@ const Navbar = () => {
               <Button size="medium" onClick={logout}>
                 Log Out
               </Button>
+
+              <Link to="/settings">
+                <Button
+                  size="medium"
+                  icon={<Icon icon="settings" size={18} />}
+                />
+              </Link>
+
               <Button
                 size="medium"
                 variant="secondary"
@@ -40,15 +51,15 @@ const Navbar = () => {
             </Center>
           </Center>
         </Center>
+
         {!show && (
           <NavCloser>
             <Button
               size="medium"
               variant="secondary"
               onClick={() => setShow(true)}
-            >
-              <Icon icon="menu" />
-            </Button>
+              icon={<Icon icon="menu" />}
+            />
           </NavCloser>
         )}
       </Nav>

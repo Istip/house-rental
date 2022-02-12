@@ -23,7 +23,7 @@ const Rating = ({ rate }) => {
           <Hearts number={emptyHeart} icon="heartEmpty" />
         </Center>
         <Text variant="regular10" color={tokens.colors.lightGrey}>
-          ({rate} - 12 szavazo alapjan)
+          ({rate} - 12 szavazat alapjan)
         </Text>
       </RateWrapper>
     </Text>

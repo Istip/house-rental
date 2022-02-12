@@ -17,6 +17,7 @@ import ChevronLeft from './icons/chevronLeft.icon';
 import Heart from './icons/heart.icon';
 import HeartEmpty from './icons/heartEmpty.icon';
 import Phone from './icons/phone.icon';
+import Settings from './icons/settings.icon';
 
 const Icon = (props) => {
   const icons = {
@@ -35,6 +36,7 @@ const Icon = (props) => {
     heart: <Heart {...props} />,
     heartEmpty: <HeartEmpty {...props} />,
     phone: <Phone {...props} />,
+    settings: <Settings {...props} />,
   };
 
   return (
