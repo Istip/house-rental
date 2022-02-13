@@ -10,6 +10,7 @@ import Select from './Select';
 import Rating from './Rating';
 import Avatar from './Avatar';
 import Textarea from './Textarea';
+import Required from './Required';
 
 export {
   tokens,
@@ -24,4 +25,5 @@ export {
   Rating,
   Avatar,
   Textarea,
+  Required,
 };

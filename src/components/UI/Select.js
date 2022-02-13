@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Text, Center, tokens, Input, Button } from './';
+import Required from './Required';
 
 const Select = ({ list, selected, setSelected, ...props }) => {
   const [visible, setVisible] = useState(false);
@@ -42,8 +43,10 @@ const Select = ({ list, selected, setSelected, ...props }) => {
       {props.label && (
         <Text tag="div" variant="medium14" color={tokens.colors.primaryDark4}>
           {props.label}
+          <Required required={props.required} />
         </Text>
       )}
+
       <SelectWrapper
         ref={wrapperNode}
         visible={visible}
@@ -95,9 +98,13 @@ const Select = ({ list, selected, setSelected, ...props }) => {
 
             {list
               .filter((item) => {
-                if (!search) return 'Helo';
                 if (
-                  item
+                  item.hu
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ||
+                  item.ro
                     .normalize('NFD')
                     .replace(/[\u0300-\u036f]/g, '')
                     .toLowerCase()
@@ -110,7 +117,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
               .map((item, i) => (
                 <SelectMenuItem
                   key={i}
-                  onClick={() => handleSelect(item)}
+                  onClick={() => handleSelect(item.hu)}
                   className={item === selected ? 'active' : ''}
                   small={props.small}
                 >
@@ -119,14 +126,14 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                       tag="div"
                       variant={item === selected ? 'medium14' : 'regular14'}
                     >
-                      {item}
+                      {item.hu}
                       <br />
                     </Text>
                   </Center>
 
                   <Center>
                     <Text variant="regular10" color={tokens.colors.mediumGrey}>
-                      {item}
+                      {item.ro}
                     </Text>
                   </Center>
                 </SelectMenuItem>

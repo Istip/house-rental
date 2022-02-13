@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text, tokens } from '.';
+import { Required, Text, tokens } from '.';
 
 const Textarea = (props) => {
   return (
@@ -10,6 +10,7 @@ const Textarea = (props) => {
         color={props.labelColor || tokens.colors.primaryBlack}
       >
         {props.label && <label htmlFor={props.id}>{props.label}</label>}
+        <Required required={props.required} />
       </Text>
       <Textfield {...props} />
     </TextfieldWrapper>

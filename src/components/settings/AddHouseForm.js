@@ -33,6 +33,7 @@ const AddHouseForm = () => {
         selected={selected}
         setSelected={setSelected}
         bottom="8px"
+        required
         small
       />
 
