@@ -118,13 +118,13 @@ const Select = ({ list, selected, setSelected, ...props }) => {
                 <SelectMenuItem
                   key={i}
                   onClick={() => handleSelect(item.hu)}
-                  className={item === selected ? 'active' : ''}
+                  className={item.hu === selected ? 'active' : ''}
                   small={props.small}
                 >
                   <Center>
                     <Text
                       tag="div"
-                      variant={item === selected ? 'medium14' : 'regular14'}
+                      variant={item.hu === selected ? 'medium14' : 'regular14'}
                     >
                       {item.hu}
                       <br />
