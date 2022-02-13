@@ -106,6 +106,7 @@ const Select = ({ list, selected, setSelected, ...props }) => {
               .map((item, i) => (
                 <SelectMenuItem
                   key={i}
+                  // 👇 add function to display text based on the current language
                   onClick={() => handleSelect(item.hu)}
                   className={item.hu === selected ? 'active' : ''}
                   small={props.small}
