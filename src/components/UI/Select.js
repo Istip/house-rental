@@ -57,19 +57,8 @@ const Select = ({ list, selected, setSelected, ...props }) => {
       >
         {props.icon && <span>{props.icon}</span>}
 
-        <TextWrapper icon={props.icon} small={props.small}>
-          <Text
-            tag="div"
-            variant="regular16"
-            style={{
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              color: selected
-                ? tokens.colors.primaryBlack
-                : tokens.colors.lightGrey,
-            }}
-          >
+        <TextWrapper selected={selected} icon={props.icon} small={props.small}>
+          <Text tag="div" variant={props.small ? 'regular14' : 'regular16'}>
             {selected || props.placeholder}
           </Text>
         </TextWrapper>
@@ -150,7 +139,7 @@ const SelectWrapper = styled.div`
   max-width: 600px;
   position: relative;
   width: 100%;
-  height: ${(props) => (props.small ? '35px' : '42px')};
+  height: ${(props) => (props.small ? '35px' : '48px')};
   background: ${tokens.colors.white};
   border-radius: ${(props) => (props.visible ? '2px 2px 0 0' : '2px')};
   border: ${(props) =>
@@ -169,7 +158,7 @@ const SelectWrapper = styled.div`
   span {
     position: absolute;
     width: 48px;
-    height: 40px;
+    height: 48px;
     left: 0;
     display: flex;
     align-items: center;
@@ -183,6 +172,10 @@ const TextWrapper = styled.div`
   align-items: center;
   margin-left: ${(props) => (props.icon ? '42px' : '12px')};
   font-size: ${(props) => (props.small ? '14px' : '16px')};
+  color: ${(props) =>
+    props.selected
+      ? `${tokens.colors.primaryBlack}`
+      : `${tokens.colors.mediumGrey}`};
 `;
 
 const InputWrapper = styled.div`
