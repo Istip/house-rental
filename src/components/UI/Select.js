@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
-import { Text, Center, tokens, Input, Button } from './';
 import Required from './Required';
+import { Text, Center, tokens, Input, Button } from './';
 
 const Select = ({ list, selected, setSelected, ...props }) => {
   const [visible, setVisible] = useState(false);
@@ -40,10 +41,14 @@ const Select = ({ list, selected, setSelected, ...props }) => {
 
   return (
     <>
+      <ReactTooltip place="right" type="error" effect="solid" />
+
       {props.label && (
         <Text tag="div" variant="medium14" color={tokens.colors.primaryDark4}>
           {props.label}
-          <Required required={props.required} />
+          <span data-tip="Kotelezo mezo!">
+            <Required required={props.required} />
+          </span>
         </Text>
       )}
 

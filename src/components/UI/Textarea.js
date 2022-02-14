@@ -1,19 +1,26 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
 import { Required, Text, tokens } from '.';
 
 const Textarea = (props) => {
   return (
-    <TextfieldWrapper>
-      <Text
-        variant="medium14"
-        color={props.labelColor || tokens.colors.primaryBlack}
-      >
-        {props.label && <label htmlFor={props.id}>{props.label}</label>}
-        <Required required={props.required} />
-      </Text>
-      <Textfield {...props} />
-    </TextfieldWrapper>
+    <>
+      <ReactTooltip place="right" type="error" effect="solid" />
+
+      <TextfieldWrapper>
+        <Text
+          variant="medium14"
+          color={props.labelColor || tokens.colors.primaryBlack}
+        >
+          {props.label && <label htmlFor={props.id}>{props.label}</label>}
+          <span data-tip="Kotelezo mezo!">
+            <Required required={props.required} />
+          </span>
+        </Text>
+        <Textfield {...props} />
+      </TextfieldWrapper>
+    </>
   );
 };
 

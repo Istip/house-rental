@@ -1,19 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 import { Required, Text, tokens } from '.';
 
 const Input = (props) => {
   return (
-    <InputContainer>
-      <Text
-        variant="medium14"
-        color={props.labelColor || tokens.colors.primaryBlack}
-      >
-        {props.label && <label htmlFor={props.id}>{props.label}</label>}
-        <Required required={props.required} />
-      </Text>
-      <InputField {...props} />
-    </InputContainer>
+    <>
+      <ReactTooltip place="right" type="error" effect="solid" />
+
+      <InputContainer>
+        <Text
+          variant="medium14"
+          color={props.labelColor || tokens.colors.primaryBlack}
+        >
+          {props.label && <label htmlFor={props.id}>{props.label}</label>}
+          <span data-tip="Kotelezo mezo!">
+            <Required required={props.required} />
+          </span>
+        </Text>
+        <InputField {...props} />
+      </InputContainer>
+    </>
   );
 };
 

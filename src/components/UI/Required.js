@@ -7,14 +7,16 @@ const Required = (props) => {
   }
 
   return (
-    <Text
-      variant="black12"
-      tag="span"
-      color={tokens.colors.error}
-      title="Ezt a mezot kotelezoen ki kell tolteni!"
-    >
-      *
-    </Text>
+    <>
+      <Text
+        variant="black12"
+        tag="span"
+        color={tokens.colors.error}
+        title="Ezt a mezot kotelezoen ki kell tolteni!"
+      >
+        *
+      </Text>
+    </>
   );
 };
 
