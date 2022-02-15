@@ -198,7 +198,7 @@ const InputWrapper = styled.div`
 
 const SelectMenu = styled.div`
   position: absolute;
-  top: ${(props) => (props.small ? '33px' : '40px')};
+  top: ${(props) => (props.small ? '33px' : '46px')};
   left: -1px;
   right: -1px;
   min-height: 37px;
