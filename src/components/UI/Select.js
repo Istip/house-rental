@@ -173,6 +173,7 @@ const SelectWrapper = styled.div`
 `;
 
 const TextWrapper = styled.div`
+  opacity: ${(props) => (props.selected ? 1 : 0.5)};
   height: 100%;
   display: flex;
   align-items: center;
