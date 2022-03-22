@@ -13,6 +13,7 @@ import {
   tokens,
   Center,
 } from '../UI';
+import { useNavigate } from 'react-router-dom';
 
 const AddHouseForm = () => {
   const initialState = {
@@ -35,6 +36,8 @@ const AddHouseForm = () => {
 
   const { addDocument, response } = useFirestore('houses');
 
+  const navigate = useNavigate();
+
   // Function to change the input field value
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,9 +48,11 @@ const AddHouseForm = () => {
 
     if (!selected) {
       toast.error('Nem valasztottal helyszint!');
+    } else {
+      addDocument(formData);
+      toast.success('Kiado haz hirdetese letrejott! 🥳');
+      navigate('/');
     }
-
-    addDocument(formData);
   };
 
   // If select is changed, change the form data so
@@ -59,7 +64,6 @@ const AddHouseForm = () => {
   // Sending stuff
   useEffect(() => {
     if (response.success) {
-      toast.success('Kiado haz hirdetese letrejott! 🥳');
       setFormData(initialState);
     }
     // eslint-disable-next-line
@@ -187,7 +191,7 @@ const AddHouseForm = () => {
           </Center>
         </Center>
 
-        <Button type="submit" block disabled={!response.loading}>
+        <Button type="submit" block disabled={response.loading === true}>
           Vegeztem
         </Button>
       </FormWrapper>
